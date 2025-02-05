@@ -55,4 +55,16 @@ function displayData(cityName, cityTemp, cityDescription) {
   container.appendChild(dataElement);
 }
 
+function displayError(message) {
+  const container = document.getElementById('weatherResult');
+
+  container.innerHTML = '';
+
+  const errorElement = document.createElement('div');
+  errorElement.classList.add('error-message');
+  errorElement.textContent = message;
+
+  container.appendChild(errorElement);
+}
+
 document.getElementById('getWeather').addEventListener('click', getWeather);
