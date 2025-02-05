@@ -1,11 +1,15 @@
 const API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 
 function getWeather() {
-  const city = 'London';
+  const city = document.getElementById('city').value.trim();
+
+  if (!city) {
+    alert('Please enter city name');
+    return;
+  }
 
   const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
 
-  
   // Fetching data from api
   fetch(geoUrl)
     .then((response) => response.json())
@@ -44,7 +48,7 @@ function displayData(cityName, cityTemp, cityDescription) {
 
   dataElement.innerHTML = `
       <p>City: ${cityName}</p>
-      <p>Temperature: ${cityTemp}</p>
+      <p>Temperature: ${Math.round(cityTemp)}°C</p>
       <p>Description: ${cityDescription}</p>
     `;
 
