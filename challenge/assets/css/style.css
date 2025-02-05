@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: "caveat", serif;
+    background: #ffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,12 +10,14 @@ body {
 }
 
 .weather-dashboard {
-    background-color: #fff;
+    background: linear-gradient(109.6deg, rgb(151, 213, 255) 11.2%, rgb(255, 155, 185) 91.1%);;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 5px solid purple;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 350px;
+    height: 390px;
 }
 
 .input-section {
@@ -28,23 +30,58 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
+    border: 2px solid purple;
+    font-family: "caveat", serif;
+    font-size: 16px;
 }
 
-button {
+#getWeather {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: violet; 
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
+#getWeather:hover { 
+    background-color: lightblue;
+} 
+
+
 
 .weather-result {
     margin-top: 20px;
+}
+
+
+.refresh-Result {
+    padding-top: 20px;
+}
+
+#refreshData { 
+    position: relative;
+    height: 25px;
+    width: 30px;
+    left: 170px; 
+    bottom: 20px;
+    background-color: violet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#refreshData:hover {
+    background-color: lightblue;
+    transform: rotatez(-360deg);
+    transition: 1s ease;
+}
+   
+
+#lastUpdate {
+    margin: 295px 280px 0 0;
 }
 
 .weather-result p {
