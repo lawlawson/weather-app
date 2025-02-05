@@ -32,8 +32,9 @@ function getWeather() {
       const cityName = data.name;
       const cityTemp = data.main.temp;
       const cityDescription = data.weather[0].description;
+      const icon = data.weather[0].icon;
 
-      displayData(cityName, cityTemp, cityDescription);
+      displayData(cityName, cityTemp, cityDescription, icon);
     })
 
     .catch((error) => console.error('Error fetching weather:', error));
@@ -41,7 +42,7 @@ function getWeather() {
 }
 
 // Function to display data in HTML on screen
-function displayData(cityName, cityTemp, cityDescription) {
+function displayData(cityName, cityTemp, cityDescription, icon) {
   const container = document.getElementById('weatherResult');
 
   container.innerHTML = '';
@@ -53,6 +54,7 @@ function displayData(cityName, cityTemp, cityDescription) {
       <p>City: ${cityName}</p>
       <p>Temperature: ${Math.round(cityTemp)}°C</p>
       <p>Description: ${cityDescription}</p>
+      <img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>
     `;
 
   container.appendChild(dataElement);
