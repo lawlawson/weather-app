@@ -31,6 +31,7 @@ input {
 }
 
 button {
+  margin-top: 20px;
   padding: 10px 15px;
   background-color: green;
   color: white;

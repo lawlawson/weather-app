@@ -1,19 +1,77 @@
 const API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 
-// First, get the latitude and longitude for the city
-const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?${city}&limit=1&appid=${API_KEY}`;
+//Function to fetch weather data based on city input
+function getWeather() {
+  const city = document.getElementById('city').value.trim();
 
-let lat = 51.5073219;
-let lon = -0.1276474;
+  // If no city name is entered then an alert will popup
+  if (!city) {
+    alert('Please enter city name');
+    return;
+  }
 
-// Call getWeather API when the button is clicked
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  // Getting the longitude and latitude of the city location
+  const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
 
-fetch(weatherUrl)
-  .then((response) => response.json())
+  // Fetching data from api
+  fetch(geoUrl)
+    .then((response) => response.json())
+    .then((geoData) => {
+      if (geoData.length === 0) {
+        throw new Error('City not found');
+      }
+      const lat = geoData[0].lat;
+      const lon = geoData[0].lon;
 
-  .then((data) => {
-    console.log(data.name, data.main.temp, data.weather[0].description); // Access specific weather data
-  })
+      const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
-  .catch((error) => console.error('Error fetching weather:', error));
+      return fetch(weatherUrl);
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      const cityName = data.name;
+      const cityTemp = data.main.temp;
+      const cityDescription = data.weather[0].description;
+      const icon = data.weather[0].icon;
+
+      displayData(cityName, cityTemp, cityDescription, icon);
+    })
+
+    .catch((error) => console.error('Error fetching weather:', error));
+  displayError('Failed to get weather info. Try again');
+}
+
+// Function to display data in HTML on screen
+function displayData(cityName, cityTemp, cityDescription, icon) {
+  const container = document.getElementById('weatherResult');
+
+  container.innerHTML = '';
+
+  const dataElement = document.createElement('div');
+  dataElement.classList.add('weather-info');
+
+  dataElement.innerHTML = `
+      <p>City: ${cityName}</p>
+      <p>Temperature: ${Math.round(cityTemp)}°C</p>
+      <p>Description: ${cityDescription}</p>
+      <img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>
+    `;
+
+  container.appendChild(dataElement);
+}
+
+//function to display error message if api call isn't working for whatever reason or typed city is invalid
+function displayError(message) {
+  const container = document.getElementById('weatherResult');
+
+  container.innerHTML = '';
+
+  const errorElement = document.createElement('div');
+  errorElement.classList.add('error-message');
+  errorElement.textContent = message;
+
+  container.appendChild(errorElement);
+}
+
+// when button is clicked getWeather function is run and information is passed
+document.getElementById('getWeather').addEventListener('click', getWeather);
