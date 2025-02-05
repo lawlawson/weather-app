@@ -9,11 +9,20 @@ let lon = -0.1276474;
 // Call getWeather API when the button is clicked
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
+// Fetching data from api
+
 fetch(weatherUrl)
   .then((response) => response.json())
 
   .then((data) => {
+    console.log(data);
     console.log(data.name, data.main.temp, data.weather[0].description); // Access specific weather data
   })
 
   .catch((error) => console.error('Error fetching weather:', error));
+
+// Function to display data in HTML file
+function displayData(data) {
+  const container = document.getElementById('weatherResult');
+  container.innerHTML = '';
+}
