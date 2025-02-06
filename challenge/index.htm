@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Delicious+Handrawn&family=Italianno&family=Pacifico&family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Delicious+Handrawn&family=Italianno&family=Pacifico&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="weather-dashboard">
+      <div class="input-section">
+        <input type="text" id="city" placeholder="Enter city name" required />
+        <button id="getWeather">🔍</button>
+      </div>
 
-        <div class="input-section">
-            <input type="text" id="city" placeholder="Enter city name" required>
-            <button id="getWeather">🔍</button>
-            
-        </div>
-        
-        <div id="weatherResult" class="weather-result">
-            <h2 id="location"></h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
-        </div>
+      <div id="weatherResult" class="weather-result">
+        <h2 id="location"></h2>
+        <p id="temperature"></p>
+        <p id="description"></p>
+      </div>
 
-        <div id="refreshResult" class="refresh-Result">
-        <p id="lastUpdate">Last Update:</p> 
-        <button id="refreshData"><i class="fa fa-refresh"></i></button> 
+      <div class="refreshResult">
+        <div class="refresh-section">
+          <p id="lastUpdate">Last Update:</p>
+          <button id="refreshData"><i class="fa fa-refresh"></i></button>
+        </div>
+      </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
