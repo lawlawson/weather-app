@@ -1,4 +1,5 @@
 body {
+
   font-family: "caveat", serif;
   background: #ffff;
   margin: 0;
@@ -27,6 +28,11 @@ body {
 
 .input-section {
   margin-bottom: 20px; 
+
+}
+
+.input-section {
+  margin-bottom: 20px;
 }
 
 input {
