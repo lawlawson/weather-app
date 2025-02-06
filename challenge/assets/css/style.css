@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 20px;
+  font-size: 32px;
 }
 
 .weather-dashboard {
@@ -23,12 +23,11 @@ body {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 350px;
-  height: 510px;
+  height: 300px;
 }
 
 .input-section {
   margin-bottom: 20px; 
-
 }
 
 .input-section {
@@ -46,13 +45,21 @@ input {
   font-size: 16px;
 }
 
+#city {
+  font-size: 26px;
+  padding-top: 2px;
+}
+
 #getWeather {
   padding: 10px 15px;
   background-color: violet;
   color: white;
-  border: none;
+  border: solid;
+  border-color: purple;
   border-radius: 5px;
   cursor: pointer;
+  width: 60px;
+  height: 49px;
 }
 
 #getWeather:hover {
