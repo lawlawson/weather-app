@@ -1,5 +1,4 @@
 body {
-
   font-family: "caveat", serif;
   background: #ffff;
   margin: 0;
@@ -8,7 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 32px;
 }
 
 .weather-dashboard {
@@ -30,10 +28,6 @@ body {
   margin-bottom: 20px; 
 }
 
-.input-section {
-  margin-bottom: 20px;
-}
-
 #city {
   font-size: 26px;
   padding-top: 2px;
@@ -43,58 +37,65 @@ input {
   padding: 10px;
   width: 70%;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-right: 10px;
   border: 2px solid purple;
   font-family: "caveat", serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #getWeather {
   padding: 10px 15px;
   background-color: violet;
   color: white;
-  border: solid;
-  border-radius: 5px;
+  border: 2px solid purple;
+  border-radius: 15px;
   cursor: pointer;
-  border-color: purple;
-  width: 60px;
-  height: 49px;
 }
 
 #getWeather:hover {
   background-color: lightblue;
 }
 
-.refresh-section {
+.refreshData {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin: 425px 0; 
-  padding-bottom: 0;
+  align-items: flex-end;
 }
 
-#refreshData {
+#refreshDataBtn {
+  margin-top: 440px;
   padding: 10px 15px;
   background-color: violet;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid purple;
+  border-radius: 15px;
   cursor: pointer;
 }
 
-#refreshData:hover {
+#refreshDataBtn:hover {
   background-color: lightblue;
   transform: rotatez(-360deg);
   transition: 1s ease;
 }
 
-#lastUpdate {
-  margin-right: 230px; 
-  font-size: 16px;
-  font-weight: bold;
+.weather-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-info {
+  margin-top: -600px;
+  box-sizing: border-box;
 }
 
 .weather-result p {
   margin: 10px 0;
+  font-size: 25px;
+}
+
+.weather-info img {
+  width: 200px;
+  height: 180px;
 }
