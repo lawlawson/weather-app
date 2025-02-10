@@ -1,5 +1,4 @@
 body {
-
   font-family: "caveat", serif;
   background: #ffff;
   margin: 0;
@@ -8,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 20px;
+
 }
 
 .weather-dashboard {
@@ -24,11 +23,6 @@ body {
   text-align: center;
   width: 350px;
   height: 510px;
-}
-
-.input-section {
-  margin-bottom: 20px; 
-
 }
 
 .input-section {
@@ -50,7 +44,7 @@ input {
   padding: 10px 15px;
   background-color: violet;
   color: white;
-  border: none;
+  border: 2px solid purple;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -59,35 +53,45 @@ input {
   background-color: lightblue;
 }
 
-.refresh-section {
+.refreshData {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin: 425px 0; 
-  padding-bottom: 0;
+  align-items: flex-end;
 }
 
-#refreshData {
+#refreshDataBtn {
+  margin-top: 440px;
   padding: 10px 15px;
   background-color: violet;
   color: white;
-  border: none;
+  border: 2px solid purple;
   border-radius: 5px;
   cursor: pointer;
 }
 
-#refreshData:hover {
+#refreshDataBtn:hover {
   background-color: lightblue;
   transform: rotatez(-360deg);
   transition: 1s ease;
 }
 
-#lastUpdate {
-  margin-right: 230px; 
-  font-size: 16px;
-  font-weight: bold;
+.weather-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-info {
+  margin-top: -600px;
+  box-sizing: border-box;
 }
 
 .weather-result p {
   margin: 10px 0;
+  font-size: 22px;
+}
+
+.weather-info img {
+  width: 140px;
+  height: 120px;
 }
