@@ -33,11 +33,11 @@ input {
   padding: 10px;
   width: 70%;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-right: 10px;
   border: 2px solid purple;
   font-family: "caveat", serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #getWeather {
@@ -45,7 +45,7 @@ input {
   background-color: violet;
   color: white;
   border: 2px solid purple;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -65,7 +65,7 @@ input {
   background-color: violet;
   color: white;
   border: 2px solid purple;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -88,10 +88,10 @@ input {
 
 .weather-result p {
   margin: 10px 0;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .weather-info img {
-  width: 140px;
-  height: 120px;
+  width: 200px;
+  height: 180px;
 }

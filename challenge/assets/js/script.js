@@ -54,10 +54,10 @@ function displayData(cityName, cityTemp, cityDescription, icon, currentDateTime)
   dataElement.classList.add('weather-info');
 
   dataElement.innerHTML = `
-      <p>City: ${cityName}</p>
-      <p>Temperature: ${Math.round(cityTemp)}°C</p>
-      <p>Description: ${cityDescription}</p>
       <img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>
+      <p> ${cityName}</p>
+      <p> ${Math.round(cityTemp)}°C</p>
+      <p> ${cityDescription}</p>
       <p>Last Update: ${currentDateTime}</p>
     `;
 
