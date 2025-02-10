@@ -106,14 +106,19 @@ document.getElementById("refreshDataBtn").addEventListener("click", function() {
 
   // Get the latest weather information for the current city input
   const city = document.getElementById('city').value.trim();
-  if (city) {
-    getWeather();
+ 
+  if (!city) {
+    alert("Please enter location before hitting refresh button first")
+    return;
   }
+
+  getWeather();
   // Optionally, display the updated date-time alone as a last update
   const container = document.getElementById('weatherResult');
   const lastUpdateElement = document.createElement('p');
   lastUpdateElement.textContent = `Last Update: ${currentDateTime}`;
   container.appendChild(lastUpdateElement);
+
 });
 
 // When the Get Weather button is clicked, the getWeather function is called
