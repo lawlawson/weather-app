@@ -21,7 +21,7 @@ body {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 350px;
-  height: 310px;
+  height: 520px;
 }
 
 .input-section {
@@ -92,7 +92,7 @@ input {
 
 .weather-result p {
   margin: 10px 0;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .weather-info img {
